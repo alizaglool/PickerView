@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,103 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PickerView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Age" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YF5-u8-BFK">
+                                <rect key="frame" x="57" y="74" width="300" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Oku-Zc-xCw"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="EcZ-Ma-ALK"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Hight" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T8U-sz-zxR">
+                                <rect key="frame" x="57" y="124" width="300" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nY3-RF-2dG"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Your Gender" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msy-bC-UdN">
+                                <rect key="frame" x="57" y="184" width="300" height="26.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="opk-PV-0lL">
+                                <rect key="frame" x="57" y="250.5" width="300" height="150"/>
+                                <color key="backgroundColor" red="0.18984528240000001" green="0.29365354729999998" blue="0.39389695479999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="kR7-vo-lid"/>
+                                    <constraint firstAttribute="height" constant="150" id="zLz-Jw-I3g"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pq-cl-hbJ">
+                                <rect key="frame" x="57" y="430.5" width="300" height="38"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Best Wight ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="ButBestWight:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5W6-ba-lVP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display The Best Wight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gta-lb-dHj">
+                                <rect key="frame" x="57" y="498.5" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vfu-XO-4hq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.28916060216894973" alpha="0.5071168664383563" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="T8U-sz-zxR" firstAttribute="top" secondItem="YF5-u8-BFK" secondAttribute="bottom" constant="20" id="2lf-MJ-03N"/>
+                            <constraint firstItem="opk-PV-0lL" firstAttribute="trailing" secondItem="Msy-bC-UdN" secondAttribute="trailing" id="2xm-4m-FmH"/>
+                            <constraint firstItem="YF5-u8-BFK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="AvL-6d-y3z"/>
+                            <constraint firstItem="opk-PV-0lL" firstAttribute="leading" secondItem="Msy-bC-UdN" secondAttribute="leading" id="DtJ-OU-dBo"/>
+                            <constraint firstItem="Gta-lb-dHj" firstAttribute="leading" secondItem="5pq-cl-hbJ" secondAttribute="leading" id="Fn5-cf-XH4"/>
+                            <constraint firstItem="Msy-bC-UdN" firstAttribute="leading" secondItem="T8U-sz-zxR" secondAttribute="leading" id="ITi-df-vxT"/>
+                            <constraint firstItem="T8U-sz-zxR" firstAttribute="leading" secondItem="YF5-u8-BFK" secondAttribute="leading" id="Rgz-c5-BGM"/>
+                            <constraint firstItem="opk-PV-0lL" firstAttribute="top" secondItem="Msy-bC-UdN" secondAttribute="bottom" constant="40" id="SGT-Ap-HIk"/>
+                            <constraint firstItem="Msy-bC-UdN" firstAttribute="trailing" secondItem="T8U-sz-zxR" secondAttribute="trailing" id="T0V-pP-q21"/>
+                            <constraint firstItem="YF5-u8-BFK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="bHY-wF-OZg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YF5-u8-BFK" secondAttribute="trailing" constant="57" id="kcI-TQ-Ahp"/>
+                            <constraint firstItem="5pq-cl-hbJ" firstAttribute="trailing" secondItem="opk-PV-0lL" secondAttribute="trailing" id="lRI-oc-k2L"/>
+                            <constraint firstItem="Gta-lb-dHj" firstAttribute="trailing" secondItem="5pq-cl-hbJ" secondAttribute="trailing" id="mUI-70-qfc"/>
+                            <constraint firstItem="5pq-cl-hbJ" firstAttribute="top" secondItem="opk-PV-0lL" secondAttribute="bottom" constant="30" id="mzh-ua-edg"/>
+                            <constraint firstItem="T8U-sz-zxR" firstAttribute="trailing" secondItem="YF5-u8-BFK" secondAttribute="trailing" id="qgE-GK-bw0"/>
+                            <constraint firstItem="Msy-bC-UdN" firstAttribute="top" secondItem="T8U-sz-zxR" secondAttribute="bottom" constant="30" id="qhr-t5-e0s"/>
+                            <constraint firstItem="Gta-lb-dHj" firstAttribute="top" secondItem="5pq-cl-hbJ" secondAttribute="bottom" constant="30" id="yqE-r0-vVo"/>
+                            <constraint firstItem="5pq-cl-hbJ" firstAttribute="leading" secondItem="opk-PV-0lL" secondAttribute="leading" id="zBI-2j-qR8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="DisplayBestWight" destination="Gta-lb-dHj" id="Tkl-0L-gKS"/>
+                        <outlet property="LaGender" destination="Msy-bC-UdN" id="XuL-JS-QYu"/>
+                        <outlet property="PickerView" destination="opk-PV-0lL" id="YTo-u1-HGh"/>
+                        <outlet property="txtAge" destination="YF5-u8-BFK" id="sLL-x7-pci"/>
+                        <outlet property="txtHight" destination="T8U-sz-zxR" id="1oD-Cj-Ozr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
